@@ -1,0 +1,18 @@
+Referencias Utiles:
+HTTPS server:
+  https://doc.rust-lang.org/book/ch20-00-final-project-a-web-server.html
+  https://doc.rust-lang.org/book/ch20-01-single-threaded.html
+  https://gist.github.com/mjohnsullivan/e5182707caf0a9dbdf2d
+DDoS attack in python:
+  https://www.tutorialspoint.com/python_penetration_testing/python_penetration_testing_dos_and_ddos_attack.htm
+  https://github.com/topics/ddos-attacks?l=python
+  https://www.neuralnine.com/code-a-ddos-script-in-python/
+  https://medium.com/@joel.barmettler/denial-of-service-attacks-do-not-always-have-to-flood-the-server-with-requests-to-make-him-shut-c630e59b731e
+Librería Pthread 
+  https://www.geeksforgeeks.org/multithreading-c-2/
+  https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/pthread.h.html
+  https://man7.org/linux/man-pages/man7/pthreads.7.html
+HTTP:
+  https://medium.com/@9cv9official/what-are-get-post-put-patch-delete-a-walkthrough-with-javascripts-fetch-api-17be31755d28
+  https://www.ibm.com/docs/es/mam/7.6.1?topic=api-put-post-delete-methods
+  https://dev.to/qbentil/http-methods-get-post-put-patch-delete-1fhi
