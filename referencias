@@ -20,4 +20,10 @@ Protocolos de internet:
   https://www.profesionalreview.com/2019/01/20/telnet-que-es/
   https://stackoverflow.com/questions/15772355/how-to-send-an-http-request-using-telnet
   https://en.wikipedia.org/wiki/Network_Time_Protocol
+Pueden ser útiles:
+  https://stackoverflow.com/questions/246859/http-1-0-vs-1-1
+  CMS ver si se puede usar (No tiene pinta.)
+Notas útiles:
+  Cada get es como un usuario diferente, ya que son solicitudes para el servidor.
+  Prethread: pre-crear el tamaño de los usuarios esperados, basicamente tener planeado cuanto ocupa cada user y tener ese espacio reservado.
   
