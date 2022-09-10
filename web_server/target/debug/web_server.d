@@ -1,1 +1,1 @@
-/home/royner39/Escritorio/web_server/target/debug/web_server: /home/royner39/Escritorio/web_server/src/main.rs
+/home/pablo/Desktop/ReposGit/tarea3-sistemasoperativos/web_server/target/debug/web_server: /home/pablo/Desktop/ReposGit/tarea3-sistemasoperativos/web_server/src/lib.rs /home/pablo/Desktop/ReposGit/tarea3-sistemasoperativos/web_server/src/main.rs
