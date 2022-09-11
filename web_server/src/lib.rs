@@ -4,8 +4,8 @@ use std::{
 };
 
 pub struct ThreadPool {
-    workers: Vec<Worker>,
-    sender: Option<mpsc::Sender<Job>>,
+    pub workers: Vec<Worker>,
+    pub sender: Option<mpsc::Sender<Job>>,
 }
 
 type Job = Box<dyn FnOnce() + Send + 'static>;
@@ -13,7 +13,6 @@ type Job = Box<dyn FnOnce() + Send + 'static>;
 impl ThreadPool {
     pub fn new(size: usize) -> ThreadPool {
         assert!(size > 0);
-        assert!(size <= 10);
 
         let (sender, receiver) = mpsc::channel();
 
@@ -24,19 +23,16 @@ impl ThreadPool {
         for id in 0..size {
             workers.push(Worker::new(id, Arc::clone(&receiver)));
         }
-
         ThreadPool {
             workers,
             sender: Some(sender),
         }
     }
-
     pub fn execute<F>(&self, f: F)
     where
         F: FnOnce() + Send + 'static,
     {
         let job = Box::new(f);
-
         self.sender.as_ref().unwrap().send(job).unwrap();
     }
 }
@@ -46,7 +42,7 @@ impl Drop for ThreadPool {
         drop(self.sender.take());
 
         for worker in &mut self.workers {
-            println!("Shutting down worker {}", worker.id);
+            println!("Apagando hilo {}", worker.id);
 
             if let Some(thread) = worker.thread.take() {
                 thread.join().unwrap();
@@ -56,24 +52,23 @@ impl Drop for ThreadPool {
 }
 
 
-struct Worker {
-    id: usize,
-    thread: Option<thread::JoinHandle<()>>,
+
+pub struct Worker {
+    pub id: usize,
+    pub thread: Option<thread::JoinHandle<()>>,
 }
 
 impl Worker {
     fn new(id: usize, receiver: Arc<Mutex<mpsc::Receiver<Job>>>) -> Worker {
         let thread = thread::spawn(move || loop {
             let message = receiver.lock().unwrap().recv();
-
             match message {
                 Ok(job) => {
-                    println!("Worker {id} got a job; executing.");
-
+                    println!("Hilo {id} funcionando.");
                     job();
                 }
                 Err(_) => {
-                    println!("Worker {id} disconnected; shutting down.");
+                    println!("Hilo {id} desconectandose.");
                     break;
                 }
             }
