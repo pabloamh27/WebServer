@@ -1,4 +1,4 @@
-use std::{net::{TcpListener, TcpStream}, io::{BufReader, BufRead, Write}, fs, time::Duration, thread, process::exit};
+use std::{net::{TcpListener, TcpStream}, io::{BufReader, BufRead, Write}, fs, time::Duration, thread, process::exit, env};
 use web_server::{ThreadPool};
 static mut BUSY_WORKERS: usize = 0;
 
@@ -91,9 +91,9 @@ fn comprobador (argumentos : Vec<String>) {
 }
 fn main() {
     //let mut input = String::new();
-    let input = "prethread-WebServer -n 20 -w /home/pablo/Desktop/ReposGit/tarea3-sistemasoperativos/web_server/src/resources/ -p 127.0.0.1:8080";
-    println!("Bienvenido al server HTTP, ingrese la sintaxis de esta manera: prethread-WebServer -n <numero de hilos> -w <HTTP-root> -p <puerto>");
+    let input = "prethread-WebServer -n 2 -w /home/pablo/Desktop/ReposGit/tarea3-sistemasoperativos/web_server/src/resources/ -p 127.0.0.1:8080";
     //stdin().read_line(&mut input).unwrap();
-    let argumentos: Vec<String> = input.split_whitespace().map(str::to_string).collect();
+    let argumentos: Vec<String> = input.split_whitespace().map(|x| x.to_string()).collect();
+    //let argumentos: Vec<String> = env::args().map(|x| x.to_string()).collect();
     comprobador(argumentos);  
 }

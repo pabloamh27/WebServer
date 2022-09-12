@@ -2,45 +2,33 @@ use std::io::{stdout, Write};
 
 use curl::easy::Easy;
 
-// Print a web page onto stdout
-fn write_contents(){
+fn http_client (){
     let mut easy = Easy::new();
-easy.url("https://www.rust-lang.org/").unwrap();
-easy.write_function(|data| {
-    stdout().write_all(data).unwrap();
-    Ok(data.len())
-}).unwrap();
-easy.perform().unwrap();
-
-println!("{}", easy.response_code().unwrap());
-}
-
-// Capture output into a local `Vec`.
-fn main() {
-    let mut dst = Vec::new();
-    let mut easy = Easy::new();
-    easy.url("https://www.rust-lang.org/").unwrap();
-
-    let mut transfer = easy.transfer();
-    transfer.write_function(|data| {
-        dst.extend_from_slice(data);
+    easy.url("127.0.0.1:8080").unwrap();
+    easy.write_function(|data| {
+        stdout().write_all(data).unwrap();
         Ok(data.len())
     }).unwrap();
-    transfer.perform().unwrap();
+    easy.perform().unwrap();
+}
 
-
-
-    // 
-    let mut data = "this is the body".as_bytes();
-
-    let mut easy = Easy::new();
-    easy.url("http://www.example.com/upload").unwrap();
-    easy.post(true).unwrap();
-    easy.post_field_size(data.len() as u64).unwrap();
-
-    let mut transfer = easy.transfer();
-    transfer.read_function(|buf| {
-        Ok(data.read(buf).unwrap_or(0))
-    }).unwrap();
-    transfer.perform().unwrap();
+fn comprobador (argumentos : Vec<String>) {
+    //Condicional para verificar que el usuario ingrese "rastreador" como primer instrucción
+    if argumentos [0] != "HTTPclient" {
+        println!("El comando debe inciar con la palabra 'HTTPclient'");
+        exit(1);
+    }
+    //Verifica que el usuario haya ingresado una opcion de rastreador válida
+    if argumentos [1] == "-h"{
+            println!("\nCliente iniciado con éxito!");
+            http_client();
+            exit(1);
+        }else{
+            println!("El comando debe contener el puerto '-h'");
+            exit(1);
+        }
+}
+fn main(){
+    let argumentos: Vec<String> = env::args().map(|x| x.to_string()).collect();
+    comprobador(argumentos); 
 }

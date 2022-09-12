@@ -1,26 +1,47 @@
-import socket
-import threading
+import threading, os, time, getopt, sys
 
-attack_num = 0
-target_host = '127.0.0.1'
-fake_ip = '182.21.20.32'
-port = 8080
+controlFlagThreads = True
 
-def attack():
-    while True:
-        s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        s.connect((target_host, port))
-        s.sendto(("GET /" + target_host + " HTTP/1.1\r\n").encode('ascii'), (target_host, port))
-        s.sendto(("Host: " + fake_ip + "\r\n\r\n").encode('ascii'), (target_host, port))
-        
-        global attack_num
-        attack_num += 1
-        print(attack_num)
-        if attack_num == 100:
-            break
-        s.close()
+def exitStress():
+    print("Apagando stress...")
+    global controlFlagThreads
+    controlFlagThreads = False
+    
+def stress(client_arguments, thread):
+    while(controlFlagThreads):
+        os.system("./httpclient -h ", client_arguments)
+        time.sleep(0.5)
+    print("Cerrando hilo " + str(thread) + "...")
 
-for i in range(10):
-    thread = threading.Thread(target=attack)
-    thread.start()
-
+def initializeStress(threads, client_arguments):
+    threads = list()
+    for i in range(int(threads)):
+        thread = threading.Thread(target=stress, args=(client_arguments, i,))
+        threads.append(thread)
+        thread.start()
+    exitCondition = ""
+    while(exitCondition != "exit"):
+        exitCondition = input()
+    exitStress()
+    
+def main():
+    print("Bienvenido al stressCMD:\n",
+          "Para iniciar el stress ingrese el comando:\n",
+          "stress -n <numero de hilos> HTTPclient <argumentos del cliente>\n",)
+    #entrada = input()
+    entrada = "stress -n 2 HTTPclient 127.0.0.1:8080"
+    input_splitted = entrada.split(" ")
+    print(input_splitted)
+    print(type(int(input_splitted[2])))
+    print(type(int))
+    if(input_splitted[0] != "stress"):
+        sys.exit("Error: Debe comenzar con stress")
+    elif (input_splitted[1] != "-n"):
+        sys.exit("Error: Debe ingresar -n")
+    elif (type(int(input_splitted[2])) != type(1)):
+        sys.exit("Error: Debe ingresar un numero")
+    elif (input_splitted[3] != "HTTPclient"):
+        sys.exit("Error: Debe ingresar HTTPclient")
+    else:
+        initializeStress(input_splitted[2], input_splitted[4])
+main()
