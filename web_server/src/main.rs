@@ -20,7 +20,7 @@ fn listener(threads: &String, root: &String,port: &String) {
         if BUSY_WORKERS <= pool.workers.len() {
             BUSY_WORKERS += 1;
             pool.execute(|| {
-                handle_connection(stream,"/home/pablo/Desktop/ReposGit/tarea3-sistemasoperativos/web_server/src/resources/",0);
+                handle_connection(stream,"/home/royner39/SistemasOperativos/tarea3-sistemasoperativos/web_server/src/resources/",0);
             });
         }
         else{
@@ -40,11 +40,14 @@ fn handle_connection(mut stream: TcpStream, root: &str ,error_code: u8) {
     let (status_line, file_name) = 
     if error_code == 1 {
         ("HTTP/1.1 200 OK", "no_threads.html")
-    }
-    else if http_request[0] == "GET / HTTP/1.1" && error_code == 0 {
+    } else if http_request[0] == "GET / HTTP/1.1" && error_code == 0 {
         ("HTTP/1.1 200 OK", "hello.html")
-    } 
-    else {
+    } else if http_request[0] == "POST / HTTP/1.1" && error_code == 0 {
+        let data = &http_request[0];
+        fs::write("resources/post.html", data).expect("No se puede escribir el archivo");
+
+        ("HTTP/1.1 200 OK", "post.html")
+    } else {
         ("HTTP/1.1 404 NOT FOUND", "error404.html")
     };
     let full_root = format!("{}{}", root, file_name);
@@ -93,7 +96,7 @@ fn comprobador (argumentos : Vec<String>) {
 
 fn main() {
     //let mut input = String::new();
-    let input = "prethread-WebServer -n 20 -w /home/pablo/Desktop/ReposGit/tarea3-sistemasoperativos/web_server/src/resources/ -p 127.0.0.1:8080";
+    let input = "prethread-WebServer -n 20 -w /home/royner39/SistemasOperativos/tarea3-sistemasoperativos/web_server/src/resources/ -p 127.0.0.1:8080";
     //stdin().read_line(&mut input).unwrap();
     let argumentos: Vec<String> = input.split_whitespace().map(|x| x.to_string()).collect();
     //let argumentos: Vec<String> = env::args().map(|x| x.to_string()).collect();
