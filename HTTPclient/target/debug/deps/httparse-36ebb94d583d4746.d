@@ -1,0 +1,12 @@
+/home/pablo/Desktop/ReposGit/tarea3-sistemasoperativos/HTTPclient/target/debug/deps/httparse-36ebb94d583d4746.rmeta: /home/pablo/.cargo/registry/src/github.com-1ecc6299db9ec823/httparse-1.8.0/src/lib.rs /home/pablo/.cargo/registry/src/github.com-1ecc6299db9ec823/httparse-1.8.0/src/iter.rs /home/pablo/.cargo/registry/src/github.com-1ecc6299db9ec823/httparse-1.8.0/src/macros.rs /home/pablo/.cargo/registry/src/github.com-1ecc6299db9ec823/httparse-1.8.0/src/simd/mod.rs /home/pablo/.cargo/registry/src/github.com-1ecc6299db9ec823/httparse-1.8.0/src/simd/sse42.rs /home/pablo/.cargo/registry/src/github.com-1ecc6299db9ec823/httparse-1.8.0/src/simd/avx2.rs
+
+/home/pablo/Desktop/ReposGit/tarea3-sistemasoperativos/HTTPclient/target/debug/deps/libhttparse-36ebb94d583d4746.rlib: /home/pablo/.cargo/registry/src/github.com-1ecc6299db9ec823/httparse-1.8.0/src/lib.rs /home/pablo/.cargo/registry/src/github.com-1ecc6299db9ec823/httparse-1.8.0/src/iter.rs /home/pablo/.cargo/registry/src/github.com-1ecc6299db9ec823/httparse-1.8.0/src/macros.rs /home/pablo/.cargo/registry/src/github.com-1ecc6299db9ec823/httparse-1.8.0/src/simd/mod.rs /home/pablo/.cargo/registry/src/github.com-1ecc6299db9ec823/httparse-1.8.0/src/simd/sse42.rs /home/pablo/.cargo/registry/src/github.com-1ecc6299db9ec823/httparse-1.8.0/src/simd/avx2.rs
+
+/home/pablo/Desktop/ReposGit/tarea3-sistemasoperativos/HTTPclient/target/debug/deps/httparse-36ebb94d583d4746.d: /home/pablo/.cargo/registry/src/github.com-1ecc6299db9ec823/httparse-1.8.0/src/lib.rs /home/pablo/.cargo/registry/src/github.com-1ecc6299db9ec823/httparse-1.8.0/src/iter.rs /home/pablo/.cargo/registry/src/github.com-1ecc6299db9ec823/httparse-1.8.0/src/macros.rs /home/pablo/.cargo/registry/src/github.com-1ecc6299db9ec823/httparse-1.8.0/src/simd/mod.rs /home/pablo/.cargo/registry/src/github.com-1ecc6299db9ec823/httparse-1.8.0/src/simd/sse42.rs /home/pablo/.cargo/registry/src/github.com-1ecc6299db9ec823/httparse-1.8.0/src/simd/avx2.rs
+
+/home/pablo/.cargo/registry/src/github.com-1ecc6299db9ec823/httparse-1.8.0/src/lib.rs:
+/home/pablo/.cargo/registry/src/github.com-1ecc6299db9ec823/httparse-1.8.0/src/iter.rs:
+/home/pablo/.cargo/registry/src/github.com-1ecc6299db9ec823/httparse-1.8.0/src/macros.rs:
+/home/pablo/.cargo/registry/src/github.com-1ecc6299db9ec823/httparse-1.8.0/src/simd/mod.rs:
+/home/pablo/.cargo/registry/src/github.com-1ecc6299db9ec823/httparse-1.8.0/src/simd/sse42.rs:
+/home/pablo/.cargo/registry/src/github.com-1ecc6299db9ec823/httparse-1.8.0/src/simd/avx2.rs:

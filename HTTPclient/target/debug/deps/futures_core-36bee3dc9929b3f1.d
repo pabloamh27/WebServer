@@ -1,0 +1,11 @@
+/home/pablo/Desktop/ReposGit/tarea3-sistemasoperativos/HTTPclient/target/debug/deps/futures_core-36bee3dc9929b3f1.rmeta: /home/pablo/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-core-0.3.24/src/lib.rs /home/pablo/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-core-0.3.24/src/future.rs /home/pablo/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-core-0.3.24/src/stream.rs /home/pablo/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-core-0.3.24/src/task/mod.rs /home/pablo/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-core-0.3.24/src/task/poll.rs /home/pablo/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-core-0.3.24/src/task/__internal/mod.rs /home/pablo/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-core-0.3.24/src/task/__internal/atomic_waker.rs
+
+/home/pablo/Desktop/ReposGit/tarea3-sistemasoperativos/HTTPclient/target/debug/deps/futures_core-36bee3dc9929b3f1.d: /home/pablo/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-core-0.3.24/src/lib.rs /home/pablo/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-core-0.3.24/src/future.rs /home/pablo/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-core-0.3.24/src/stream.rs /home/pablo/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-core-0.3.24/src/task/mod.rs /home/pablo/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-core-0.3.24/src/task/poll.rs /home/pablo/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-core-0.3.24/src/task/__internal/mod.rs /home/pablo/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-core-0.3.24/src/task/__internal/atomic_waker.rs
+
+/home/pablo/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-core-0.3.24/src/lib.rs:
+/home/pablo/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-core-0.3.24/src/future.rs:
+/home/pablo/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-core-0.3.24/src/stream.rs:
+/home/pablo/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-core-0.3.24/src/task/mod.rs:
+/home/pablo/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-core-0.3.24/src/task/poll.rs:
+/home/pablo/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-core-0.3.24/src/task/__internal/mod.rs:
+/home/pablo/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-core-0.3.24/src/task/__internal/atomic_waker.rs:

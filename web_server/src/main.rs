@@ -1,5 +1,6 @@
-use std::{net::{TcpListener, TcpStream}, io::{BufReader, BufRead, Write}, fs, time::Duration, thread, process::exit, env};
+use std::{net::{TcpListener, TcpStream}, io::{BufReader, BufRead, Write}, fs, time::Duration, thread, process::exit};
 use web_server::{ThreadPool};
+
 static mut BUSY_WORKERS: usize = 0;
 
 fn listener(threads: &String, root: &String,port: &String) {
@@ -24,7 +25,7 @@ fn listener(threads: &String, root: &String,port: &String) {
         }
         else{
             handle_connection(stream, &root, 1);
-            println!("\n\n\n\n SE HA RECHAZADO UNA PETICION");
+            println!("\n\n\n\n SE HA RECHAZADO UNA PETICION POR SOBRECARGA DE HILOS");
         }    
     }}
 }
@@ -89,6 +90,7 @@ fn comprobador (argumentos : Vec<String>) {
         exit(1);
     }
 }
+
 fn main() {
     //let mut input = String::new();
     let input = "prethread-WebServer -n 2 -w /home/pablo/Desktop/ReposGit/tarea3-sistemasoperativos/web_server/src/resources/ -p 127.0.0.1:8080";
