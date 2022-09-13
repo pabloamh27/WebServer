@@ -50,8 +50,16 @@ Se estará utilizando Ubuntu 20.04.4 LTS y como IDE se utilizará Visual Studio 
 |WebServer|Implementación de protocolos| HTTPclient en Rust |Stress-Client|Documentación|Kick-off|
 |-----|------|------|------|------|------|
 |30/40|5/10|15/15|15/15|20/20|5/5|
+### Autoevaluación:
+|Aprendizaje de pthreads|Aprendizaje de comunicación entre procesos| Aprendizaje de sockets |Estudiante|
+|-----|------|------|------|
+|5| 5                                          | 5                      | Pablo Muñoz    |
+||                                            |                        | Royner Miranda |
+
+
 
 ### Reporte de commits:
+
 ## Lecciones Aprendidas:
 
 

@@ -93,7 +93,7 @@ fn comprobador (argumentos : Vec<String>) {
 
 fn main() {
     //let mut input = String::new();
-    let input = "prethread-WebServer -n 2 -w /home/pablo/Desktop/ReposGit/tarea3-sistemasoperativos/web_server/src/resources/ -p 127.0.0.1:8080";
+    let input = "prethread-WebServer -n 20 -w /home/pablo/Desktop/ReposGit/tarea3-sistemasoperativos/web_server/src/resources/ -p 127.0.0.1:8080";
     //stdin().read_line(&mut input).unwrap();
     let argumentos: Vec<String> = input.split_whitespace().map(|x| x.to_string()).collect();
     //let argumentos: Vec<String> = env::args().map(|x| x.to_string()).collect();
