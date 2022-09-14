@@ -29,6 +29,12 @@ fn listener(threads: &String, root: &String,port: &String) {
         }    
     }}
 }
+fn print_vector(vector: &Vec<String>){
+    for i in vector{
+        println!("{} ", i);
+    }
+    println!("");
+}
 
 fn handle_connection(mut stream: TcpStream, root: &str ,error_code: u8) {
     let buf_reader = BufReader::new(&mut stream);
@@ -37,17 +43,32 @@ fn handle_connection(mut stream: TcpStream, root: &str ,error_code: u8) {
     .map(|result| result.unwrap())
     .take_while(|line| !line.is_empty())
     .collect();
+
+    print_vector(&http_request);
     let (status_line, file_name) = 
     if error_code == 1 {
         ("HTTP/1.1 200 OK", "no_threads.html")
     } else if http_request[0] == "GET / HTTP/1.1" && error_code == 0 {
         ("HTTP/1.1 200 OK", "hello.html")
     } else if http_request[0] == "POST / HTTP/1.1" && error_code == 0 {
-        let data = &http_request[0];
-        fs::write("resources/post.html", data).expect("No se puede escribir el archivo");
-
+        let data = fs::read("/home/royner39/SistemasOperativos/tarea3-sistemasoperativos/post.html").unwrap();
+        fs::write("/home/royner39/SistemasOperativos/tarea3-sistemasoperativos/web_server/src/resources/post.html", data).expect("No se puede escribir el archivo");
         ("HTTP/1.1 200 OK", "post.html")
-    } else {
+    } else if http_request[0] == "DELETE / HTTP/1.1" && error_code == 0 {
+        let data = &http_request[0];
+        fs::remove_file("/home/royner39/SistemasOperativos/tarea3-sistemasoperativos/web_server/src/resources/post.html").expect("No se puede eliminar el archivo");
+        ("HTTP/1.1 200 OK", "post.html")
+    } else if http_request[0] == "PUT / HTTP/1.1" && error_code == 0 {
+        let data = fs::read("/home/royner39/SistemasOperativos/tarea3-sistemasoperativos/post.html").unwrap();
+        if fs::metadata("/home/royner39/SistemasOperativos/tarea3-sistemasoperativos/web_server/src/resources/post.html").is_ok() {
+            fs::remove_file("/home/royner39/SistemasOperativos/tarea3-sistemasoperativos/web_server/src/resources/post.html").expect("No se puede eliminar el archivo");
+            fs::write("/home/royner39/SistemasOperativos/tarea3-sistemasoperativos/web_server/src/resources/post.html", data).expect("No se puede escribir el archivo");
+        } else {
+            println!("No se puede modificar el archivo ya que no existe");
+        }
+        ("HTTP/1.1 200 OK", "post.html")
+    }
+    else {
         ("HTTP/1.1 404 NOT FOUND", "error404.html")
     };
     let full_root = format!("{}{}", root, file_name);
