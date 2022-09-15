@@ -1,8 +1,10 @@
 use std::{net::{TcpListener, TcpStream}, io::{BufReader, BufRead, Write}, fs, time::Duration, thread, process::exit};
 use web_server::{ThreadPool};
+use std::env;
 
 static mut BUSY_WORKERS: usize = 0;
 
+// Funcion para recibir todas las solicitudes del cliente al servidor, ademas maneja el uso y contador de hilos
 fn listener(threads: &String, root: &String,port: &String) {
     let threads = threads.parse::<usize>().unwrap();
     let listener = TcpListener::bind(port).unwrap();
@@ -27,6 +29,8 @@ fn listener(threads: &String, root: &String,port: &String) {
         }    
     }}
 }
+
+// Funcion para imprimir vectores
 fn print_vector(vector: &Vec<String>){
     for i in vector{
         println!("{} ", i);
@@ -34,6 +38,7 @@ fn print_vector(vector: &Vec<String>){
     println!("");
 }
 
+// Funcion para manejar la conexion con el cliente
 fn handle_connection(mut stream: TcpStream, root: String ,error_code: u8) {
     let buf_reader = BufReader::new(&mut stream);
     let http_request: Vec<_> = buf_reader
@@ -82,18 +87,19 @@ fn handle_connection(mut stream: TcpStream, root: String ,error_code: u8) {
 
 }
 
+// Funcion para manejar los argumentos de entrada
 fn comprobador (argumentos : Vec<String>) {
     //Condicional para verificar que el usuario ingrese "rastreador" como primer instrucción
-    if argumentos [0] != "prethread-WebServer" {
+    if argumentos [1] != "prethread-WebServer" {
         println!("El comando debe inciar con la palabra 'prethread-WebServer'");
         exit(1);
     }
     //Verifica que el usuario haya ingresado una opcion de rastreador válida
-    if argumentos [1] == "-n"{
-        if argumentos [3] == "-w" {
-            if argumentos [5] == "-p" {
+    if argumentos [2] == "-n"{
+        if argumentos [4] == "-w" {
+            if argumentos [6] == "-p" {
                 println!("\nServidor iniciado con éxito!");
-                listener(&argumentos [2], &argumentos[4].to_string(), &argumentos[6]);
+                listener(&argumentos [3], &argumentos[5].to_string(), &argumentos[7]);
                 exit(1);
             }else{
                 println!("El comando debe contener el puerto '-p'");
@@ -112,12 +118,11 @@ fn comprobador (argumentos : Vec<String>) {
     }
 }
 
+//Función principal
 fn main() {
-    //let mut input = String::new();
-    let input = "prethread-WebServer -n 2 -w /home/pablo/Desktop/ReposGit/tarea3-sistemasoperativos/web_server/src/resources/ -p 127.0.0.1:8080";
-    //stdin().read_line(&mut input).unwrap();
-    let argumentos: Vec<String> = input.split_whitespace().map(|x| x.to_string()).collect();
+    //let input = "./web_server prethread-WebServer -n 2 -w /home/pablo/Desktop/ReposGit/tarea3-sistemasoperativos/web_server/src/resources/ -p 127.0.0.1:8080";
+    //let argumentos: Vec<String> = input.split_whitespace().map(|x| x.to_string()).collect();
     //Lee argumentos de consola
-    //let argumentos: Vec<String> = env::args().map(|x| x.to_string()).collect();
+    let argumentos: Vec<String> = env::args().map(|x| x.to_string()).collect();
     comprobador(argumentos);  
 }

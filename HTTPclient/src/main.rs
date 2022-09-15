@@ -5,7 +5,7 @@ use hyper::body;
 use std::env;
 use std::fs;
 
-
+// Funcion para enviar una solicitud de tipo GET al servidor 
 async fn get(url:&str, filename: &str) ->  Result<(), Box<dyn std::error::Error + Send + Sync>> {
     println!("{}", filename);
     let url = format!("{}{}", url, filename);
@@ -20,6 +20,7 @@ async fn get(url:&str, filename: &str) ->  Result<(), Box<dyn std::error::Error 
     Ok(())
 }
 
+// Funcion para enviar una solicitud de tipo POST al servidor
 async fn post(url: &str, message: &str) ->  Result<(), Box<dyn std::error::Error + Send + Sync>> {
     let data = fs::read_to_string(message).expect("Unable to read file");
     let request = Request::builder()
@@ -36,7 +37,7 @@ async fn post(url: &str, message: &str) ->  Result<(), Box<dyn std::error::Error
     Ok(())
 }
 
-
+// Funcion para enviar una solicitud de tipo DELETE al servidor
 async fn delete(url: &str, message: &str) ->  Result<(), Box<dyn std::error::Error + Send + Sync>> {
     let data = fs::read_to_string(message).expect("Unable to read file");
     let request = Request::builder()
@@ -53,6 +54,7 @@ async fn delete(url: &str, message: &str) ->  Result<(), Box<dyn std::error::Err
     Ok(())
 }
 
+// Funcion para enviar una solicitud de tipo PUT al servidor
 async fn put(url: &str, message: &str) ->  Result<(), Box<dyn std::error::Error + Send + Sync>>{
     let data = fs::read_to_string(message).expect("Unable to read file");
     let request = Request::builder()
@@ -70,6 +72,7 @@ async fn put(url: &str, message: &str) ->  Result<(), Box<dyn std::error::Error 
 }
 
 #[tokio::main]
+// Funcion principal
 async fn main() ->  Result<(), Box<dyn std::error::Error + Send + Sync>> { 
     //Lee argumentos de consola
     let argumentos: Vec<String> = env::args().collect();
@@ -107,7 +110,8 @@ async fn main() ->  Result<(), Box<dyn std::error::Error + Send + Sync>> {
     let get_method = "GET";
     let delete_method = "DELETE";
     let put_method = "PUT";
-
+    
+    //Verifica el tipo de metodos
     if choice == post_method {
         post(host, arguments).await;
     } else if choice == get_method {
