@@ -85,6 +85,110 @@ Se encontraron problemas que no pudieron ser solucionados, en este caso no se lo
 
 ### Reporte de commits:
 #### Pablo:
+
+commit 7304641038e22d4090aba33468179515613ea08c (HEAD -> main, origin/main, origin/HEAD)
+Author: Pablo Munoz Hidalgo <53487847+Litecore50@users.noreply.github.com>
+Date:   Wed Sep 14 23:09:55 2022 -0600
+
+    Comentarios y documentacion actualizada
+
+commit 92ae5c0c76d7fac0dcaaa60b2346288af56f1e02
+Author: Pablo Munoz Hidalgo <53487847+Litecore50@users.noreply.github.com>
+Date:   Wed Sep 14 22:48:03 2022 -0600
+
+    Código comentado
+
+commit b3d8c79a8db64d380762a7f836d3b780b7f4ff98
+Author: Pablo Munoz Hidalgo <53487847+Litecore50@users.noreply.github.com>
+Date:   Wed Sep 14 22:33:29 2022 -0600
+
+    Rutas como parametros y comandos en consola al 100%
+
+commit 7e82ef0fe1f4fb6cfc3caeb75b30002215bdc3a7
+Author: Royner39 <roynerarturo39@gmail.com>
+Date:   Tue Sep 13 19:48:02 2022 -0600
+
+    Implementación de métodos POST, PUT, DELETE
+
+commit 0accac8fb477ccd7e130e5323bcc38be5f2f50cd
+Author: Royner39 <roynerarturo39@gmail.com>
+Date:   Tue Sep 13 08:55:31 2022 -0600
+
+    Caso Post
+    
+    Falta probar
+
+commit f9acb8af15216f105f3498d29a871f07c9aaa3d0
+Author: Pablo Munoz Hidalgo <53487847+Litecore50@users.noreply.github.com>
+Date:   Mon Sep 12 18:22:17 2022 -0600
+
+    Documentación
+
+commit 68a4d74cc00ab0bec77f8c9b1d0a4fdb0b49707c
+Author: Pablo Munoz Hidalgo <53487847+Litecore50@users.noreply.github.com>
+Date:   Mon Sep 12 18:15:40 2022 -0600
+
+    Client y StressCMD funcional, solo método GET
+
+commit d40b51d5c927b1131c9be074d6da9661607b0fca
+Author: Pablo Munoz Hidalgo <53487847+Litecore50@users.noreply.github.com>
+Date:   Sun Sep 11 23:08:03 2022 -0600
+
+    Actualizacion stressCMD, Webserver funcional, httpclient actualizado
+
+commit 71f145e1979550381b79b79bb0631d093ebb9fa7
+Author: Pablo Munoz Hidalgo <53487847+Litecore50@users.noreply.github.com>
+Date:   Sun Sep 11 15:34:44 2022 -0600
+
+    StressCMD funcional, WebServer se cae y httpclient progreso
+
+commit 653cc607e4c44cef0ffc95dc98899f0282322418
+Author: Pablo Munoz Hidalgo <53487847+Litecore50@users.noreply.github.com>
+Date:   Sat Sep 10 16:46:56 2022 -0600
+
+    WebServer funcional
+
+commit 784ca2e2367a01223dd3685275a4fed42ef0e53a
+Author: Pablo Munoz Hidalgo <53487847+Litecore50@users.noreply.github.com>
+Date:   Sat Sep 10 15:02:06 2022 -0600
+
+    Create README.md
+
+commit 492394198a0b347be09e286f43d89a06c493dcec
+Author: Royner39 <roynerarturo39@gmail.com>
+Date:   Sat Sep 10 14:40:26 2022 -0600
+
+    Implementación de 404
+
+commit 8f37ba844660919fb581cbad79ff4747565f9097
+Author: Royner39 <roynerarturo39@gmail.com>
+Date:   Sat Sep 10 14:14:45 2022 -0600
+
+    Web Server básico
+
+commit a641ff9042224ef229d0f4972cffb970c16e0c86
+Author: Pablo Munoz Hidalgo <53487847+Litecore50@users.noreply.github.com>
+Date:   Tue Sep 6 14:03:21 2022 -0600
+
+    REFERENCIAS!!!!!!!!!!!!!
+
+commit f87c05aa7059b11ec4c298730c710f38e33cd876
+Author: Pablo Munoz Hidalgo <53487847+Litecore50@users.noreply.github.com>
+Date:   Tue Sep 6 13:37:51 2022 -0600
+
+    Más referencias
+
+commit fafbd3459997d8bdf091d2052d6c313018607e25
+Author: Pablo Munoz Hidalgo <53487847+Litecore50@users.noreply.github.com>
+Date:   Tue Sep 6 13:34:20 2022 -0600
+
+    Referencias útiles para la tarea
+
+commit 760bbf2e83406c8645afc66d344f37c3f18f0b53
+Author: Pablo Munoz Hidalgo <53487847+Litecore50@users.noreply.github.com>
+Date:   Tue Sep 6 13:24:36 2022 -0600
+
+    Create test
 #### Royner:
 
 
