@@ -30,8 +30,15 @@ def main():
     print("Bienvenido al stressCMD:\n",
           "Para iniciar el stress ingrese el comando:\n",
           "stress -n <numero de hilos> HTTPclient <argumentos del cliente>\n",)
-    #entrada = input()
-    entrada = "stress -n 2 HTTPclient http://127.0.0.1:8080 GET /hello.html"
+    #entrada = input("Ingrese el comando: ")
+    #GET METHOD
+    #entrada = "stress -n 10 HTTPclient http://127.0.0.1:8080 GET /home/pablo/Desktop/ReposGit/tarea3-sistemasoperativos/web_server/src/resources/hello.html"
+    #POST METHOD
+    entrada = "stress -n 10 HTTPclient http://127.0.0.1:8080 POST /home/pablo/Desktop/ReposGit/tarea3-sistemasoperativos/post.html"
+    #DELETE METHOD
+    #entrada = "stress -n 10 HTTPclient http://127.0.0.1:8080 DELETE /home/pablo/Desktop/ReposGit/tarea3-sistemasoperativos/web_server/src/resources/post.html"
+    #PUT METHOD
+    #entrada = "stress -n 10 HTTPclient http://127.0.0.1:8080 PUT /home/pablo/Desktop/ReposGit/tarea3-sistemasoperativos/post.html"
     input_splitted = entrada.split(" ")
     print(input_splitted)
     print(type(int(input_splitted[2])))
