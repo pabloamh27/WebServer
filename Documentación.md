@@ -16,11 +16,32 @@ Se estará utilizando Ubuntu 20.04.4 LTS y como IDE se utilizará Visual Studio 
 ## Estructuras de datos usadas y funciones:
 ### Estructuras:
 
+- Workers
+- ThreadPool
+
 ### Funciones:
+
+
 
 ## Instrucciones para ejecutar el programa:
 
-1. 
+1. Comenzar el web_server ejecutandolo desde consola
+
+2. Despues es posible enviar solicitudes por medio del HTTPClient
+
+3. En caso de que se quiera botar el server usar StressCMD
+
+4. Disfrutar :)
+
+   Se deben usar las siguientes estructuras para cada ejecutable.
+
+   WebServer: "./web_server prethread-WebServer -n <cantidad-hilos> -w <HTTP-root> -p <port>"
+
+   HTTPclient: "./httpclient HTTPclient -h <host-a-conectar> [<lista-de-comandos-a-ejecutar>]"
+
+   StressCMD: "python3 stresscmd stress -n <cantidad-hilos> HTTPclient <parametros del cliente>"
+
+   
 
 ## Actividades realizadas por estudiante:
 |Fecha|Hora de Inicio|Hora de Finalización|Actividad realizada|Estudiante|
@@ -32,24 +53,28 @@ Se estará utilizando Ubuntu 20.04.4 LTS y como IDE se utilizará Visual Studio 
 | 11/09/2022 | 1:00 PM        | 6:00 PM              | Creación del Client                                          | Pablo Muñoz |
 | 11/09/2022 | 10:00 PM       | 12:00 AM             | Contador de threads y mensaje de error                       | Pablo Muñoz |
 | 12/09/2022 | 2:00 PM        | 6:00 PM              | StressCMD funcional, Client Funcional solo con GET y documentación | Pablo Muñoz |
-| /09/2022   |                |                      |                                                              |             |
+| 14/09/2022 | 6:00 PM | 12:00 PM | Documentación, root como parámetro y programas funcionales desde consola | Pablo Muñoz |
 | /09/2022   |                |                      |                                                              |             |
 | /09/2022   |                |                      |                                                              |             |
 | /09/2022   |                |                      |                                                              |             |
 | /09/2022   |                |                      |                                                              |             |
 
-### Horas totales: 
+### Horas totales: 44 (Pablo) + 00 (Royner) =
 
 ## Autoevaluación:
 ### Estado del programa
 
+El programa funciona perfectamente exceptuando la recepción de diferentes protocolos como Telnet o SNMP. Además no se pueden descargar documentos del servidor HTTP.
+
 ### Problemas encontrados y limitaciones adicionales
+
+Se encontraron problemas que no pudieron ser solucionados, en este caso no se logró que el servidor provea el servicio de descarga de archivos grandes, tampoco el parseo con otros protocolos diferentes a HTTP.
 
 
 ### Evaluación
 |WebServer|Implementación de protocolos| HTTPclient en Rust |Stress-Client|Documentación|Kick-off|
 |-----|------|------|------|------|------|
-|30/40|5/10|15/15|15/15|20/20|5/5|
+|35/40|7/10|15/15|15/15|20/20|5/5|
 ### Autoevaluación:
 |Aprendizaje de pthreads|Aprendizaje de comunicación entre procesos| Aprendizaje de sockets |Estudiante|
 |-----|------|------|------|
@@ -59,10 +84,14 @@ Se estará utilizando Ubuntu 20.04.4 LTS y como IDE se utilizará Visual Studio 
 
 
 ### Reporte de commits:
+#### Pablo:
+#### Royner:
+
+
 
 ## Lecciones Aprendidas:
 
-
+En esta tarea se aprendió muchísimo sobre threads y más que todo sobre el funcionamiento del protocolo HTTP y sus propiedades, el hacer que varios programas funcionen en conjunto también fue un reto interesante. Creemos que es una tarea bastante pesada sin embargo que deja muchas lecciones interesantes como el manejo de módulos en diferentes lenguajes de programación. Es una tarea que deja bastante que decir en un curriculum por lo que si se desea destacar recomendamos hacerla.
 
 
 
