@@ -21,6 +21,26 @@ Se estará utilizando Ubuntu 20.04.4 LTS y como IDE se utilizará Visual Studio 
 
 ### Funciones:
 
+Web Server: 
+
+- listener (Función para recibir todas las solicitudes del cliente al servidor, ademas maneja el uso y contador de hilos)
+- handle_connection (Función para manejar la conexion con el cliente)
+- comprobador (Función para manejar los argumentos de entrada)
+- print_vector (Función para imprimir vectores)
+
+HTTP Client:
+
+- get (Función para enviar una solicitud de tipo GET al servidor )
+- post (Función para enviar una solicitud de tipo POST al servidor)
+- delete (Función para enviar una solicitud de tipo DELETE al servidor)
+- put (Función para enviar una solicitud de tipo PUT al servidor)
+
+Stress CMD:
+
+- exitStress (Función que se encarga de "apagar el stress")
+- stress (Función que realiza el stress)
+- initializeStress (Función que se encarga de inicializa el stress con los parametros que recibe)
+
 
 
 ## Instrucciones para ejecutar el programa:
@@ -54,12 +74,14 @@ Se estará utilizando Ubuntu 20.04.4 LTS y como IDE se utilizará Visual Studio 
 | 11/09/2022 | 10:00 PM       | 12:00 AM             | Contador de threads y mensaje de error                       | Pablo Muñoz |
 | 12/09/2022 | 2:00 PM        | 6:00 PM              | StressCMD funcional, Client Funcional solo con GET y documentación | Pablo Muñoz |
 | 14/09/2022 | 6:00 PM | 12:00 PM | Documentación, root como parámetro y programas funcionales desde consola | Pablo Muñoz |
-| /09/2022   |                |                      |                                                              |             |
-| /09/2022   |                |                      |                                                              |             |
-| /09/2022   |                |                      |                                                              |             |
-| /09/2022   |                |                      |                                                              |             |
+| 09/09/2022 | 6:00 PM | 10:00 PM |   Investigación sobre el web server                          | Royner Miranda |
+| 10/09/2022 | 10:00 AM       | 4:00 PM              | Implementación del web server con un hilo                    | Royner Miranda |
+| 11/09/2022 | 10:00 AM       | 5:00 PM              | Investigación sobre el client y métodos HTTP                 | Royner Miranda |
+| 12/09/2022 | 7:00 PM        | 12:00 PM             | Implementación método POST                                   | Royner Miranda |
+| 13/09/2022 | 4:00 PM        | 9:00 PM              | Implementación de los demás métodos HTTP                     | Royner Miranda |
+| 15/09/2022 | 5:00 PM        | 8:00 PM              | Documentación                                                | Royner Miranda |
 
-### Horas totales: 44 (Pablo) + 00 (Royner) =
+### Horas totales: 44 (Pablo) + 30 (Royner) = 74 horas
 
 ## Autoevaluación:
 ### Estado del programa
@@ -74,17 +96,16 @@ Se encontraron problemas que no pudieron ser solucionados, en este caso no se lo
 ### Evaluación
 |WebServer|Implementación de protocolos| HTTPclient en Rust |Stress-Client|Documentación|Kick-off|
 |-----|------|------|------|------|------|
-|35/40|7/10|15/15|15/15|20/20|5/5|
+|37/40|7/10|15/15|15/15|20/20|5/5|
 ### Autoevaluación:
 |Aprendizaje de pthreads|Aprendizaje de comunicación entre procesos| Aprendizaje de sockets |Estudiante|
 |-----|------|------|------|
 |5| 5                                          | 5                      | Pablo Muñoz    |
-||                                            |                        | Royner Miranda |
+|5|5                                            |    4                    | Royner Miranda |
 
 
 
 ### Reporte de commits:
-#### Pablo:
 
 commit 7304641038e22d4090aba33468179515613ea08c (HEAD -> main, origin/main, origin/HEAD)
 Author: Pablo Munoz Hidalgo <53487847+Litecore50@users.noreply.github.com>
@@ -189,16 +210,49 @@ Author: Pablo Munoz Hidalgo <53487847+Litecore50@users.noreply.github.com>
 Date:   Tue Sep 6 13:24:36 2022 -0600
 
     Create test
-#### Royner:
 
 
 
 ## Lecciones Aprendidas:
 
 En esta tarea se aprendió muchísimo sobre threads y más que todo sobre el funcionamiento del protocolo HTTP y sus propiedades, el hacer que varios programas funcionen en conjunto también fue un reto interesante. Creemos que es una tarea bastante pesada sin embargo que deja muchas lecciones interesantes como el manejo de módulos en diferentes lenguajes de programación. Es una tarea que deja bastante que decir en un curriculum por lo que si se desea destacar recomendamos hacerla.
+Además, aprendimos como crear un client-web server con la implementación de métodos como GET, POST, DELETE, entre otros; lo cual es bastante importante conocer.
 
 
 
 ## Bibliografía:
 
-[1] 	
+
+[1]"Final Project: Building a Multithreaded Web Server - The Rust Programming Language", Doc.rust-lang.org, 2022. [Online]. Available: https://doc.rust-lang.org/book/ch20-00-final-project-a-web-server.html. [Accessed: 15- Sep- 2022].
+
+[2]"Building a Single-Threaded Web Server - The Rust Programming Language", Doc.rust-lang.org, 2022. [Online]. Available: https://doc.rust-lang.org/book/ch20-01-single-threaded.html. [Accessed: 15- Sep- 2022].
+
+[3]"Simple HTTP server example for Rust", Gist, 2022. [Online]. Available: https://gist.github.com/mjohnsullivan/e5182707caf0a9dbdf2d. [Accessed: 15- Sep- 2022].
+
+[4]"DoS & DDoS attack", Tutorialspoint.com, 2022. [Online]. Available: https://www.tutorialspoint.com/python_penetration_testing/python_penetration_testing_dos_and_ddos_attack.htm. [Accessed: 15- Sep- 2022].
+
+[5]"Build software better, together", GitHub, 2022. [Online]. Available: https://github.com/topics/ddos-attacks?l=python. [Accessed: 15- Sep- 2022].
+
+[6]"Code A DDOS Script In Python - NeuralNine", NeuralNine, 2022. [Online]. Available: https://www.neuralnine.com/code-a-ddos-script-in-python/. [Accessed: 15- Sep- 2022].
+
+[7]"Denial of Service attack in Python", Medium, 2022. [Online]. Available: https://medium.com/@joel.barmettler/denial-of-service-attacks-do-not-always-have-to-flood-the-server-with-requests-to-make-him-shut-c630e59b731e. [Accessed: 15- Sep- 2022].
+
+[8]"Multithreading in C - GeeksforGeeks", GeeksforGeeks, 2022. [Online]. Available: https://www.geeksforgeeks.org/multithreading-c-2/. [Accessed: 15- Sep- 2022].
+
+[9]"<pthread.h>", Pubs.opengroup.org, 2022. [Online]. Available: https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/pthread.h.html. [Accessed: 15- Sep- 2022].
+
+[10]"pthreads(7) - Linux manual page", Man7.org, 2022. [Online]. Available: https://man7.org/linux/man-pages/man7/pthreads.7.html. [Accessed: 15- Sep- 2022].
+
+
+[11]"What are GET, POST, PUT, PATCH, DELETE? A walkthrough with JavaScript’s Fetch API.", Medium, 2022. [Online]. Available: https://medium.com/@9cv9official/what-are-get-post-put-patch-delete-a-walkthrough-with-javascripts-fetch-api-17be31755d28. [Accessed: 15- Sep- 2022].
+
+[12]"IBM Documentation", Ibm.com, 2022. [Online]. Available: https://www.ibm.com/docs/es/mam/7.6.1?topic=api-put-post-delete-methods. [Accessed: 15- Sep- 2022].
+
+[13]"HTTP Methods "GET", "POST", "PUT", "PATCH", "DELETE"", DEV Community 👩‍💻👨‍💻, 2022. [Online]. Available: https://dev.to/qbentil/http-methods-get-post-put-patch-delete-1fhi. [Accessed: 15- Sep- 2022].
+
+[14]"▷ Telnet qué es y para qué sirve 【 La más completa 】", Profesional Review, 2022. [Online]. Available: https://www.profesionalreview.com/2019/01/20/telnet-que-es/. [Accessed: 15- Sep- 2022].
+
+[15]H. [closed] and s. bachert, "How to send an HTTP request using Telnet", Stack Overflow, 2022. [Online]. Available: https://stackoverflow.com/questions/15772355/how-to-send-an-http-request-using-telnet. [Accessed: 15- Sep- 2022].
+
+[16]"Network Time Protocol - Wikipedia", En.wikipedia.org, 2022. [Online]. Available: https://en.wikipedia.org/wiki/Network_Time_Protocol. [Accessed: 15- Sep- 2022].
+
