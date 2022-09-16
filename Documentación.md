@@ -102,11 +102,17 @@ Se encontraron problemas que no pudieron ser solucionados, en este caso no se lo
 |Aprendizaje de pthreads|Aprendizaje de comunicación entre procesos| Aprendizaje de sockets |Estudiante|
 |-----|------|------|------|
 |5| 5                                          | 5                      | Pablo Muñoz    |
-|5|5                                            |    4                    | Royner Miranda |
+|5|5                                            |    5                   | Royner Miranda |
 
 
 
 ### Reporte de commits:
+
+commit 11b38a0821283abe4ff7658aca1b7827d69d9aef 
+Author: Pablo Munoz Hidalgo <53487847+Litecore50@users.noreply.github.com>
+Date:   Thu Sep 15 21:59:45 2022 -0600
+
+    Version Final v1.0
 
 commit 0d087f400717f788e7c7862f6a51ea82c9ae2e75
 Author: Royner39 <roynerarturo39@gmail.com>
