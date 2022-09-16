@@ -74,6 +74,7 @@ Stress CMD:
 | 11/09/2022 | 10:00 PM       | 12:00 AM             | Contador de threads y mensaje de error                       | Pablo Muñoz |
 | 12/09/2022 | 2:00 PM        | 6:00 PM              | StressCMD funcional, Client Funcional solo con GET y documentación | Pablo Muñoz |
 | 14/09/2022 | 6:00 PM | 12:00 PM | Documentación, root como parámetro y programas funcionales desde consola | Pablo Muñoz |
+| 15/09/2022 | 9:30 PM | 11:00 PM | Documentación y cambios finales | Pablo Muñoz |
 | 09/09/2022 | 6:00 PM | 10:00 PM |   Investigación sobre el web server                          | Royner Miranda |
 | 10/09/2022 | 10:00 AM       | 4:00 PM              | Implementación del web server con un hilo                    | Royner Miranda |
 | 11/09/2022 | 10:00 AM       | 5:00 PM              | Investigación sobre el client y métodos HTTP                 | Royner Miranda |
@@ -81,7 +82,7 @@ Stress CMD:
 | 13/09/2022 | 4:00 PM        | 9:00 PM              | Implementación de los demás métodos HTTP                     | Royner Miranda |
 | 15/09/2022 | 5:00 PM        | 8:00 PM              | Documentación                                                | Royner Miranda |
 
-### Horas totales: 44 (Pablo) + 30 (Royner) = 74 horas
+### Horas totales: 45.5 (Pablo) + 30 (Royner) = 75.5 horas
 
 ## Autoevaluación:
 ### Estado del programa
@@ -107,7 +108,19 @@ Se encontraron problemas que no pudieron ser solucionados, en este caso no se lo
 
 ### Reporte de commits:
 
-commit 7304641038e22d4090aba33468179515613ea08c (HEAD -> main, origin/main, origin/HEAD)
+commit 0d087f400717f788e7c7862f6a51ea82c9ae2e75
+Author: Royner39 <roynerarturo39@gmail.com>
+Date:   Thu Sep 15 19:21:54 2022 -0600
+
+    Documentación completa
+
+commit ac455a62ee072529859eae5d4fab1950346c01bc
+Author: Pablo Munoz Hidalgo <53487847+Litecore50@users.noreply.github.com>
+Date:   Wed Sep 14 23:12:25 2022 -0600
+
+    Documentacion actualizada
+
+commit 7304641038e22d4090aba33468179515613ea08c 
 Author: Pablo Munoz Hidalgo <53487847+Litecore50@users.noreply.github.com>
 Date:   Wed Sep 14 23:09:55 2022 -0600
 

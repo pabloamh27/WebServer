@@ -4,17 +4,20 @@ import numpy as np
 
 controlFlagThreads = True
 
+#Funcion para terminar el stress
 def exitStress():
     print("Apagando stress...")
     global controlFlagThreads
     controlFlagThreads = False
-    
-def stress(client_arguments, thread):
+
+#Funcion para el stress    
+def stress(client_arguments, threadNumber):
     while(controlFlagThreads):
         os.system("cd /home/pablo/Desktop/ReposGit/tarea3-sistemasoperativos/HTTPclient/target/debug && ./web_server " + client_arguments)
         time.sleep(0.5)
-    print("Cerrando hilo " + str(thread) + "...")
+    print("Cerrando hilo " + str(threadNumber) + "...")
 
+#Funcion para iniciar el stress
 def initializeStress(threadNumber, client_arguments):
     threads = list()
     for i in range(int(threadNumber)):
@@ -25,16 +28,17 @@ def initializeStress(threadNumber, client_arguments):
     while(exitCondition != "exit"):
         exitCondition = input()
     exitStress()
-    
+
+#Funcion para obtener los argumentos    
 def main():
     print("Bienvenido al stressCMD:\n",
           "Para iniciar el stress ingrese el comando:\n",
           "stress -n <numero de hilos> HTTPclient <argumentos del cliente>\n",)
-    #entrada = input("Ingrese el comando: ")
+    entrada = input("Ingrese el comando: ")
     #GET METHOD
     #entrada = "stress -n 10 HTTPclient http://127.0.0.1:8080 GET /home/pablo/Desktop/ReposGit/tarea3-sistemasoperativos/web_server/src/resources/hello.html"
     #POST METHOD
-    entrada = "stress -n 10 HTTPclient http://127.0.0.1:8080 POST /home/pablo/Desktop/ReposGit/tarea3-sistemasoperativos/post.html"
+    #entrada = "stress -n 10 HTTPclient http://127.0.0.1:8080 POST /home/pablo/Desktop/ReposGit/tarea3-sistemasoperativos/post.html"
     #DELETE METHOD
     #entrada = "stress -n 10 HTTPclient http://127.0.0.1:8080 DELETE /home/pablo/Desktop/ReposGit/tarea3-sistemasoperativos/web_server/src/resources/post.html"
     #PUT METHOD
@@ -59,4 +63,6 @@ def main():
                 client_arguments = client_arguments + " " + input_splitted[i]
         print(client_arguments)
         initializeStress(int(input_splitted[2]), client_arguments)
+
+
 main()
